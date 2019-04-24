@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const db = require('../database/index.js')
+const db = require('../database/Rick-db/mongoConnection')
 
 const app = express();
 
@@ -10,7 +11,15 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/../public')));
 
-// Controller for GET by id
+// Original Controller for GET by id
+// app.get('/data/artist/:id', (req, res) => {
+//   const { id } = req.params;
+
+//   db.getArtist(id)
+//     .then(artist => res.json(artist))
+//     .catch(console.log);
+// });
+
 app.get('/data/artist/:id', (req, res) => {
   const { id } = req.params;
 

@@ -36,15 +36,16 @@ class Header extends Component {
       .then(result => result.json())
       .then(data => {
         if (this._isMounted) {
-          this.setState({ name: data.name, header_img: data.header_img})
+          this.setState({ name: data.artists, header_img: data.image})
         }
       })
   }
 
   componentDidMount() {
     this._isMounted = true;
-    this.getArtistState('demo')
+    this.getArtistState(Math.floor(Math.random() * 10000000));
   }
+  
 
   componentWillUnmount() {
     this._isMounted = false;
@@ -52,7 +53,7 @@ class Header extends Component {
 
   render() {
     let divStyle = {
-      backgroundImage: `url(${this.state.header_img})`
+      backgroundImage: `url(${this.state.header_img})`,
     }
     
     const routing = (
