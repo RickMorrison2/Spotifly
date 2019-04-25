@@ -1,0 +1,9 @@
+config:
+  target: 'http://localhost:3001'
+  phases:
+    - duration: 90
+      arrivalRate: 1000
+scenarios:
+  - flow:
+    - get:
+        url: "/data/artist/1234"

@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/juicy-fec/ian-header-component#readme",
   "dependencies": {
+    "artillery": "^1.6.0-27",
     "cors": "^2.8.5",
     "eslint-plugin-jest": "^22.4.1",
     "express": "^4.16.4",
