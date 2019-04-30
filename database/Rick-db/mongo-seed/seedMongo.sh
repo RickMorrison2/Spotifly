@@ -1,0 +1,1 @@
+mongoimport -d spotify -c artists --type csv --file ./data.csv --headerline

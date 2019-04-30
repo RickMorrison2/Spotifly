@@ -2,16 +2,18 @@
 FROM node:latest
 
 # Make a folder in your image where your app's source code can live
-RUN mkdir -p /src/app
+RUN mkdir -p /src/app1
 
 # Tell your container where your app's source code will live
-WORKDIR /src/app
+WORKDIR /src/app1
 
 # What source code do you what to copy, and where to put it?
-COPY . /src/app
+COPY . /src/app1
 
 # Does your app have any dependencies that should be installed?
 RUN npm install
+
+RUN npm run seed-database
 
 # What port will the container talk to the outside world with once created?
 EXPOSE 3001
