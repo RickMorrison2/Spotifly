@@ -13,10 +13,8 @@ COPY . /src/app1
 # Does your app have any dependencies that should be installed?
 RUN npm install
 
-RUN npm run seed-database
-
 # What port will the container talk to the outside world with once created?
 EXPOSE 3001
 
 # How do you start your app?
-CMD ["npm", "run", "all"]
+CMD ["npm", "start"]

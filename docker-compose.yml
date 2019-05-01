@@ -6,17 +6,26 @@ services:
     depends_on:
       - 'database'
     ports:
-      - '3001:3001'
+      - '80:3001'
   
   database:
     image: mongo:latest
     # build: ./database/Rick-db/mongo-seed/
-    ports:
-      - '27017:27017'
-    volumes:
-      - ./database/Rick-db/mongo-seed:/data
+    # ports:
+    #   - '27017:27017'
+    # volumes:
+    #   - ./database/Rick-db/mongo-seed:/data
     # command:
     #   "mongoimport --host mongo --port 27017 --db spotify --collection artists --type csv --headerline --file /data/data.csv"
+  seed:
+    build: ./data
+    depends_on:
+      - 'database'
+  # index:
+  #   build: ./index
+  #   depends_on:
+  #     - 'seed'
+  
   redis:
     image: redis
     container_name: cache

@@ -1,0 +1,1 @@
+mongo --host database --database spotify --collection artists --eval "use spotify && db.artists.createIndex({id: 1})"
