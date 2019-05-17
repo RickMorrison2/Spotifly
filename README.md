@@ -1,2 +1,2 @@
 # Spotifly
-![http://freegifmaker.me/images/2fgJN/](test gif)
+![Test gif](http://freegifmaker.me/images/2fgJN/)
